@@ -1,0 +1,17 @@
+{
+  "name": "hello-dokku",
+  "description": "FastAPI app deployed to Dokku by a GitHub Actions self-hosted runner",
+  "healthchecks": {
+    "web": [
+      {
+        "type": "startup",
+        "name": "web check",
+        "description": "New container must answer 200 on /health before it gets traffic",
+        "path": "/health",
+        "attempts": 5,
+        "wait": 3,
+        "timeout": 5
+      }
+    ]
+  }
+}
